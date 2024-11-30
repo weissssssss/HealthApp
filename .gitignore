@@ -1,0 +1,55 @@
+# Node.js dependencies
+/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+/node_modules/
+/jspm_packages/
+
+# Build output
+/dist/
+/build/
+/coverage/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# dotenv environment variable files
+.env
+
+# IDE and Editor settings
+.idea/
+.vscode/
+
+# OS-specific files
+ehthumbs.db
+Desktop.ini
+
+# TernJS typings
+.tern-port
+
+# PM2 process files
+pids
+*.pid
+*.seed
+*.log
+
+# TypeScript generated files
+*.tsbuildinfo
+
+# SASS cache
+.sass-cache/
+
+# Miscellaneous
+npm-debug.log
+yarn.lock
+
+# Local configuration files
+*.env
