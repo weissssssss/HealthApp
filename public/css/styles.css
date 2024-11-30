@@ -1,3 +1,4 @@
+/* General Styling */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -27,31 +28,64 @@ nav li {
     background-color: #dff0f7;
 }
 
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Person-like Group */
 .circle-group {
-    margin: 20px auto;
-    width: 200px;
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.person {
+    width: 70px;
+    height: 70px;
     background-color: #fff;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('https://randomuser.me/api/portraits/men/10.jpg'); /* Replace with actual images */
+    background-size: cover;
+    background-position: center;
 }
 
+/* Features Section */
 .features {
     display: flex;
     justify-content: space-around;
     margin: 40px;
+    gap: 30px;
 }
 
 .feature-item {
     background: #eaf6fc;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
 }
 
+.feature-item h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
     background: #eaf2f8;
 }
-
