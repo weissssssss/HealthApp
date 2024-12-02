@@ -1,0 +1,823 @@
+body{
+    font-family: poppins;
+    background-color: aqua;
+}
+
+/*Doctors*/
+.doctor {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(229, 235, 235) !important ;
+    display:block;
+    top: 0;
+    position: relative;
+    align-items: center;
+    border-radius: 5px;
+    left: -0.55%;
+  }
+ 
+  .HeadDoc {
+    position: absolute;
+    height: 5%;
+    width: 79%;
+    background-color: transparent;
+    z-index: 10000;
+    left: 18%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Docbutton {
+    border: none;
+    color: #1565c0;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .Docbutton:hover {
+    transform: scale(1.1);
+  }
+  #logoutDoc {
+    color: #c62828;
+  }
+  
+  .headerDoc {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 17%;
+    background-color: rgb(9, 79, 175);
+    border-radius: 10px;
+    z-index: 1000;
+  }
+  .PictureDoc {
+    position: absolute;
+    height: 30vh;
+    top: 2%;
+    left: 5%;
+    border-radius: 50%;
+    width: 15vw;
+    background-color: rgb(203, 203, 218);
+  }
+  #photoDoc {
+    position: absolute;
+    font-size: 10em;
+    left: 16%;
+  }
+  .greetingsDoc {
+    position: absolute;
+    top: 28%;
+    font-size: 1.3em;
+    left: 7%;
+    color: aliceblue;
+  }
+  #usernameDoc {
+    position: absolute;
+    top: 28%;
+    font-size: 1.3em;
+    left: 60%;
+    color: aliceblue;
+  }
+  .containerDoc {
+    position: absolute;
+    height: 30%;
+    width: 100%;
+  
+    top: 36%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-around; /* Space out child divs evenly */
+  }
+  
+  .Patient,
+  .therapy,
+  .groupDoc,
+  .records,
+  .settings {
+    flex: 1; /* Allows each child to take up equal space */
+    width: 90%; /* Optional: set to 100% to fill the container's width */
+    text-align: center; /* Optional: center content within each child div */
+    background-color: rgb(4, 91, 212); /* Optional: visual distinction */
+    padding: 10px; /* Optional: add padding for content inside */
+    height: 25%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+ 
+  
+  .Patient:hover,
+  .therapy:hover,
+  .groupDoc:hover,
+  .records:hover,
+  .settings:hover {
+    background-color: rgb(6, 50, 112);
+  }
+  
+  /* Initial styles for p elements inside the divs */
+  .Patient p,
+  .therapy p,
+  .groupDoc p,
+  .records p,
+  .settings p {
+    color: rgb(216, 169, 214);
+    transform: translate(0, 5px);
+    opacity: 0.01;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for effects */
+  }
+  
+  /* Apply the hover effect on p elements when hovering over the parent divs */
+  .Patient:hover p,
+  .therapy:hover p,
+  .groupDoc:hover p,
+  .records:hover p,
+  .settings:hover p {
+    opacity: 1;
+    transform: translate(0, -19px);
+  }
+  
+  #Patient,
+  #records,
+  #therapy,
+  #groupsDoc,
+  #settings {
+    font-size: 2em;
+    color: aliceblue;
+    top: -5%;
+  }
+
+  
+  .TheContentDoc {
+    position: absolute;
+    height: 90%;
+    width: 80%;
+    background-color: transparent;
+    left: 17%;
+    top: 5%;
+    border-radius: 0 10px 10px 0;
+  }
+  .slidingDocContent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(205, 223, 223);
+    border-radius: 0 10px 10px 0;
+    opacity: 0;
+    
+    transform: translateX(-100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: all 0.8s ease-out;
+  }
+  
+  .slidingDocContent.active {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  
+  
+  #searchFormAppDoc {
+    position: absolute;
+    height: 9%;
+    top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    left: 10%;
+    background-color: #eaeff5;
+  }
+  #searchFormAppDoc input {
+    height: 50%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  #groupDoc {
+    position: absolute;
+    table-layout: fixed;
+    top: 20%;
+    left:2.5%;
+    max-width: 98%;
+    border-collapse: collapse; /* Ensures borders are merged */
+  }
+  #groupDoc th,
+  #groupDoc td {
+    border: 1px solid #161212; /* Border for cells */
+    padding: 8px; /* Spacing inside cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Style for table headers */
+  #groupDoc th {
+    background-color: #d4f05a; /* Header background color */
+  }
+  
+  #groupDoc tr {
+    background-color: rgb(243, 237, 237);
+  }
+  /* Hover effect for rows */
+  #groupDoc tr:hover {
+    background-color: #41c9eb; /* Change background on hover */
+  }
+  
+  
+  
+  .edit-btnAppDoc,
+  .delete-btnAppDoc,
+  .completed-btnAppDoc {
+    padding: 6px 12px;
+    margin: 2px 4px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .edit-btnAppDoc {
+    background-color: #4caf50 !important;
+    color: white;
+  }
+  
+  .completed-btnAppDoc{
+    color: #e8f5e9;
+    background-color: #1512dd;
+  }
+  .delete-btnAppDoc {
+    background-color: #ac2a21 !important;
+    color: white;
+  }
+  
+  .edit-btnAppDoc:hover{
+    background-color: #7ddd80 !important;
+    color: rgb(18, 19, 20);
+    transform: scale(1.05);
+  }
+  
+  .completed-btnAppDoc:hover{
+    color: #0b0c0b;
+    background-color: #5e5cdf;
+  }
+  .delete-btnAppDoc:hover {
+    background-color: #e4766f !important;
+    color: rgb(15, 14, 14);
+  }
+  
+  
+  
+  
+  /* Presctiption section */
+  
+  
+  /*For the patient section search for the Patient */
+  #patientPresSearchForm{
+    position: absolute;
+    height: 9%;
+    top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    left: 10%;
+    background-color: #eaeff5;
+  }
+  
+  #patientPresSearchForm input {
+    height: 50%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  #patientPresDocbutton {
+    height: 50%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  #patientPresDocbutton:hover {
+    background-color: aqua;
+    transform: scale(1.1);
+  }
+  /*The table */
+  #patientPresDocTable {
+    position: absolute;
+    table-layout: fixed;
+    top: 12%;
+    left:10%;
+    min-width: 70%;
+    border-collapse: collapse; /* Ensures borders are merged */
+    min-height:40%;
+    
+    
+  }
+  #patientPresDocTable th,
+  #patientPresDocTable td {
+    border: 1px solid #161212; /* Border for cells */
+    padding: 8px; /* Spacing inside cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Style for table headers */
+  #patientPresDocTable th {
+    background-color: #d4f05a; /* Header background color */
+  }
+  
+  #patientPresDocTable tr {
+    background-color: rgb(243, 237, 237);
+  }
+  /* Hover effect for rows */
+  #patientPresDocTable tr:hover {
+    background-color: #41c9eb; /* Change background on hover */
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    margin: 0 4px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .edit-btn {
+    background-color: #4caf50 !important;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #ac2a21 !important;
+    color: white;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /*For the Patient section */
+  #PatientSearchForm {
+    position: absolute;
+    height: 9%;
+    top: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    left: 10%;
+    background-color: #eaeff5;
+  }
+  #PatientSearchForm input {
+    height: 50%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  #PatientDocbutton {
+    height: 50%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  #PatientDocbutton:hover {
+    background-color: aqua;
+    transform: scale(1.1);
+  }
+  /*The table */
+  #PatientDocTable {
+    position: absolute;
+    table-layout: fixed;
+    top: 50%;
+    left:10%;
+    min-width: 70%;
+    border-collapse: collapse; /* Ensures borders are merged */
+    min-height:20%;
+    z-index: 1;
+    
+  }
+  #PatientDocTable th,
+  #PatientDocTable td {
+    border: 1px solid #161212; /* Border for cells */
+    padding: 8px; /* Spacing inside cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Style for table headers */
+  #PatientDocTable th {
+    background-color: #d4f05a; /* Header background color */
+  }
+  
+  #PatientDocTable tr {
+    background-color: rgb(243, 237, 237);
+  }
+  /* Hover effect for rows */
+  #PatientDocTable tr:hover {
+    background-color: #41c9eb; /* Change background on hover */
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    margin: 0 4px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .edit-btn {
+    background-color: #4caf50 !important;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #ac2a21 !important;
+    color: white;
+  }
+  
+  
+  
+  
+  
+  /* settings section */
+  .settingsDocContent {
+    z-index:0;
+      position: absolute;
+      height: 70%;
+      width: 100%;
+      left: 0%;
+      background-color: rgb(205, 223, 223);
+      border-radius: 0 10px 10px 0;
+      z-index: 10;
+      display: grid;
+    top:18%;
+      
+      align-items: center;
+      padding: 10px; /* Optional: adds padding inside the container */
+      opacity: 0;
+      transition: all 0.5s ease-out;
+      transform: translate(-100%,0);
+    }
+    .settingsDocContent.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .settingsDocContent.blur{
+      filter: blur(20px);
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .DeleteAccountDoc,
+    .preferencesDoc,
+    .AccountManagementDoc,
+    .helpAndSupportDoc {
+      flex: 1 ; /* Makes each section flexible, with a minimum width of 200px */
+      height:55%;
+      min-width:90%; /* Adjusts the height of each section */
+      padding: 10px; /* Optional: adds padding inside each section */
+      border-radius: 5px; /* Optional: rounds the corners of each section */
+    gap:5%;
+      box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+      background-color: white;
+      color: rgb(17, 16, 16);
+      display: flex;
+      font-size: 1.2em;
+      font-weight: 500;
+      
+      align-items: center;
+      transition: transform 0.3s ease-out;
+      cursor: pointer !important;
+    }
+    
+    .DeleteAccountDoc:hover,
+    .preferencesDoc:hover,
+    .AccountManagementDoc:hover,
+    .helpAndSupportDoc:hover {
+      transform: scale(1.01);
+      
+    }
+    #arrow{
+      position:absolute;
+      
+      font-size: 1.2em;
+      color: #373f37;
+      transform: translateX(2540%);
+      opacity:1;
+      transition:all 1s ease;
+    }
+    .DeleteAccountDoc:hover  #arrow,
+    .preferencesDoc:hover  #arrow,
+    .AccountManagementDoc:hover  #arrow,
+    .helpAndSupportDoc:hover  #arrow{
+      transform: translateX(4340%);
+      opacity:0.1;
+    }
+  
+  
+    .DeleteAccountDoc i,
+    .preferencesDoc i,
+    .AccountManagementDoc i,
+    .helpAndSupportDoc i {
+      font-size: 2.5em;
+      left: 10%;
+    }
+  
+  /* Settings Popup Section */
+  .settingContentPopups {
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    top: 5%;
+    background-color: transparent;
+    left: 17%;
+  }
+  
+  /*Account update */
+  
+  .modalDoc {
+    position: absolute;
+    height: 75%;
+    width: 35%;
+    background-color: #161212;
+    top: 10%;
+    left: 40%;
+    border-radius: 5px;
+    z-index: 100;
+    transform: translate(-280%, 0);
+    opacity: 0;
+    transition: all 0.9s ease-out;
+  }
+  .modalDoc.active {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  /* Modal content */
+  .modal-contentDoc {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(61, 207, 226);
+    border-radius: 5px;
+  }
+  #updateAccountFormDoc {
+    position: relative;
+    justify-content: center;
+    padding: 6%;
+    height: 100%;
+    width: 100%;
+  }
+  .modal-contentDoc h2 {
+    position: relative;
+    left: 5%;
+    top:5%
+  }
+  #updateAccountFormDoc input {
+    height: 7%;
+    position: absolute;
+    border-radius: 5px;
+    border: none;
+    left: 10%;
+    width: 53%;
+    
+  }
+  
+  .newEmailDoc {
+    position: absolute;
+    top: -2%;
+    font-size: 1.5em;
+    left: 10%;
+  }
+  #newEmailDoc {
+    top: 5%;
+  }
+  
+  .currentPasswordDoc {
+    position: absolute;
+    font-size: 1.5em;
+    width: 50%;
+    top: 12%;
+    left: 10%;
+  }
+  #currentPasswordDoc {
+    top: 19%;
+  }
+  
+  .newPasswordDoc {
+    position: absolute;
+    font-size: 1.5em;
+    width: 50%;
+    top: 26%;
+    left: 10%;
+  }
+  #newPasswordDoc {
+    top: 33%;
+  }
+  
+  .confirmPasswordDoc {
+    position: absolute;
+    font-size: 1.5em;
+    width: 70%;
+    top: 41%;
+    left: 10%;
+  }
+  #confirmPasswordDoc {
+    top: 49%;
+  }
+  .errorEditDoc {
+    position: absolute;
+    height: 12%;
+    width: 23%;
+  
+    right: 12%;
+    top: 3%;
+  }
+  #currentPasswordEditDoc {
+    top: 19%;
+  }
+  
+  #newPasswordEditDoc {
+    top: 33%;
+  }
+  
+  #confirmPasswordEditDoc {
+    top: 49%;
+  }
+  
+  #EditsubDoc {
+    top: 60%;
+    position: absolute;
+    left: 30%;
+    border-radius: 5px;
+    border: none;
+    height: 7%;
+    background-color: #bed1d6;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  #EditsubDoc:hover {
+    background-color: yellow;
+    transform: scale(1.1);
+  }
+  
+  /* Close button */
+  .closeModalDoc {
+    color: #e21d1d;
+    position: absolute;
+    font-size: 1.7em;
+    font-weight: 500;
+    height: 11%;
+    width: 11%;
+    background-color: rgb(50, 150, 153);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0.5%;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+  }
+  .closeModalDoc i {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .closeModalDoc:hover {
+    background-color: #e21d1d;
+  }
+  .closeModalDoc:hover i {
+    color: white;
+  }
+  
+  
+  /* Patient PopUps */
+  .PatientContentPopup{
+    position: absolute;
+    height: 90%;
+    width: 80%;
+    left:20%;
+    top:7%;
+    background-color: rgb(196, 243, 243);
+    border-radius: 0 10px 10px 0;
+    opacity: 0;
+    
+    transform: translateX(-100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    transition: all 0.8s ease-out;
+  }
+  .PatientContentPopup.active{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  #PatientSearchFormPopup {
+    position: absolute;
+    height: 9%;
+    top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    left: 10%;
+    background-color: #eaeff5;
+  }
+  #PatientSearchFormPopup input {
+    height: 50%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  #PatientPopupbutton {
+    height: 50%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  #PatientPopupbutton:hover {
+    background-color: aqua;
+    transform: scale(1.1);
+  }
+  /*The table */
+  #PatientDocPopupTable {
+    position: absolute;
+    table-layout: fixed;
+    top: 15%;
+    left:10%;
+    min-width: 70%;
+    border-collapse: collapse; /* Ensures borders are merged */
+    min-height:20%;
+    z-index: 1;
+    
+  }
+  #PatientDocPopupTable th,
+  #PatientDocPopupTable td {
+    border: 1px solid #161212; /* Border for cells */
+    padding: 8px; /* Spacing inside cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Style for table headers */
+  #PatientDocPopupTable th {
+    background-color: #d4f05a; /* Header background color */
+  }
+  
+  #PatientDocPopupTable tr {
+    background-color: rgb(243, 237, 237);
+  }
+  /* Hover effect for rows */
+  #PatientDocPopupTable tr:hover {
+    background-color: #41c9eb; /* Change background on hover */
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    margin: 0 4px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .edit-btn {
+    background-color: #4caf50 !important;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #ac2a21 !important;
+    color: white;
+  }
+  
+  

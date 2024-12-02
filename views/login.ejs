@@ -19,6 +19,15 @@
 
         <form action="/login" method="POST">
             <div class="input-group">
+               <label for="position">Position</label>
+               <select class="position">
+                <option value="" disabled selected>Select User Type</option>
+                <option value="patient">Patient</option>
+                <option value="therapist">Therapist</option>
+                <option value="admin">Admin</option>
+               </select>
+            </div>
+            <div class="input-group">
                 <label for="email">Email</label> 
                 <input type="text" id="email" name="email" required>
             </div>            
