@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Therapist Section</title>
+    <link rel="stylesheet" href="/therapist/therapist.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/d510096626.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="doctor">
+      <div class="HeadDoc">
+        <button class="Docbutton" id="homeDoc">Home</button>
+        <button class="Docbutton" id="logoutDoc" onclick="logoutDoc()">
+          Log Out
+        </button>
+      </div>
+      <!-- menu header section -->
+      <div class="headerDoc">
+        <div class="PictureDoc">
+          <i id="photoDoc" class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="greetingsDoc">Welcome,</h3>
+        <h3 id="usernameDoc">User</h3>
+        <!--Menu section-->
+        <div class="containerDoc">
+          
+
+          <div
+          class="groupDoc"
+          onclick="toggleSlideDoc('groupDocContent')">
+          <i id="groupsDoc" class="fa-solid fa-people-group"></i>
+          <p>Groups</p>
+          </div>
+          <div
+            class="Patient"
+            onclick="toggleSlideDoc('PatientDocContent')"
+          >
+          <i id="Patient" class="fa-solid fa-hospital-user"></i>
+        
+            <p>Patient</p>
+          </div>
+          <div class="therapy" onclick="toggleSlideDoc('therapyContent')">
+            <i id="therapy" class="fa-solid fa-people-arrows"></i>
+            <p>Therapy Session</p>
+          </div>
+          <div class="records" onclick="toggleSlideDoc('recordsContent')">
+            <i id="records" class="fa-regular fa-clipboard"></i>
+            <p>Medical records</p>
+          </div>
+
+          <div
+            class="settings"
+            onclick="toggleSettingsDoc('settingsContentDoc')"
+          >
+            <i id="settings" class="fa-solid fa-gear" aria-label="Settings"></i>
+            <p>Settings</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="TheContentDoc">
+        <div class="slidingDocContent" id="groupDocContent">
+         <div><h3>Create A Group</h3></div>
+         <div><h3>Delete A Group</h3></div>
+         <div><h3>Modify A Group</h3></div>
+        </div>
+
+        <div class="slidingDocContent" id="PatientDocContent">
+          <!--For searching the patient to be given the medicine Patients-->
+          <form id="patientPresSearchForm">
+            <input
+              type="text"
+              id="patientPresDocIdFilter"
+              placeholder="Search by ID"
+              name="patientPresDocIdFilter"
+            />
+            <input
+              type="text"
+              id="patientPresDocEmailIdFilter"
+              placeholder="Search by Email"
+              name="patientPresDocEmailIdFilter"
+            />
+            <input
+              type="text"
+              id="patientPresDocNumberIdFilter"
+              placeholder="Search by Phone Number"
+              name="patientPresDocNumberIdFilter"
+            />
+            <button
+              type="button"
+              id="patientPresDocbutton"
+              onclick="patientPresDocFetch()"
+            >
+              Search
+            </button>
+          </form>
+
+          <table id="patientPresDocTable">
+            <thead id="TheadpatientPresDoc">
+              <tr id="mainRowpatientPresDoc">
+                <th>Patient ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+
+                <th>Actions</th>
+                <!-- For Edit/Delete -->
+              </tr>
+            </thead>
+            <tbody id="TbodypatientPresDoc"></tbody>
+          </table>
+
+          
+        </div>
+
+        <div class="slidingDocContent" id="therapyContent">
+          <p>Coming up soon</p>
+        </div>
+        <div class="slidingDocContent" id="recordsContent">
+          <p>Coming Up soon</p>
+        </div>
+
+        <div class="settingsDocContent" id="settingsContentDoc">
+          <div class="preferencesDoc">
+            <i class="fa-solid fa-sliders"></i>
+            <p>Preferences</p>
+            <i id="arrow" class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="AccountManagementDoc" onclick="toggle4()">
+            <i class="fa-regular fa-user"></i>
+            <p>Account Management</p>
+            <i id="arrow" class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="helpAndSupportDoc">
+            <i class="fa-regular fa-circle-question"></i>
+            <p>Help And Support</p>
+            <i id="arrow" class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div
+            class="DeleteAccountDoc"
+            id="docAccDel"
+            onclick="deleteAccount()"
+          >
+            <i class="fa-solid fa-trash"></i>
+            <p>Delete Account</p>
+            <i id="arrow" class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <!--Patients popups Section-->
+
+      <div class="TheContentDocPopups">
+        <div class="PatientContentPopup">
+          <form id="PatientSearchFormPopup">
+            <input
+              type="text"
+              id="idPatientFilterPopup"
+              placeholder="Search by Patient ID"
+              name="idPatientFilterPopup"
+            />
+            <input
+              type="text"
+              id="emailFilterDocPopup"
+              placeholder="Search by Email"
+              name="emailPatientFilterPopup"
+            />
+            <input
+              type="text"
+              id="phonePatientFilterPopup"
+              placeholder="Search by Phone"
+              name="phonePatientFilterPopup"
+            />
+            <button
+              type="button"
+              id="PatientPopupbutton"
+              onclick="PatientPopupFetch()"
+            >
+              Search
+            </button>
+          </form>
+
+          
+        </div>
+      </div>
+
+      <!--Settings Popup section-->
+
+      <div class="settingContentPopups">
+        <!-- Modal or a section for updating email and password -->
+        <div id="updateAccountModalDoc" class="modalDoc">
+          <div class="modal-contentDoc">
+            <div class="closeModalDoc" onclick="toggle4()">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h2>Update Account Information</h2>
+            <form id="updateAccountFormDoc">
+              <!-- email section-->
+              <div>
+                <label for="newEmailDoc" class="newEmailDoc">New Email:</label>
+                <input
+                  type="email"
+                  id="newEmailDoc"
+                  placeholder="Enter new email"
+                  name="newEmailDoc"
+                  required
+                />
+              </div>
+              <span class="errorEditDoc" id="emailEditDoc"></span>
+              <!-- Current section-->
+              <div>
+                <label for="currentPasswordDoc" class="currentPasswordDoc"
+                  >Current Password:</label
+                >
+                <input
+                  type="password"
+                  id="currentPasswordDoc"
+                  placeholder="Enter current password"
+                  name="currentPasswordDoc"
+                  required
+                />
+              </div>
+              <span class="errorEditDoc" id="currentPasswordEditDoc"></span>
+
+              <!--New password-->
+              <div>
+                <label for="newPasswordDoc" class="newPasswordDoc"
+                  >New Password:</label
+                >
+                <input
+                  type="password"
+                  id="newPasswordDoc"
+                  placeholder="Enter new password"
+                  name="newPasswordDoc"
+                  required
+                />
+              </div>
+              <span class="errorEditDoc" id="newPasswordEditDoc"></span>
+              <!-- confirm password-->
+              <div>
+                <label for="confirmPasswordDoc" class="confirmPasswordDoc"
+                  >Confirm New Password:</label
+                >
+                <input
+                  type="password"
+                  id="confirmPasswordDoc"
+                  placeholder="Confirm new password"
+                  name="confirmPasswordDoc"
+                  required
+                />
+              </div>
+              <span class="errorEditDoc" id="confirmPasswordEditDoc"></span>
+
+              <!-- submission button-->
+              <button type="submit" id="EditsubDoc">Update Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="/therapist/therapist.js"></script>
+  </body>
+</html>
