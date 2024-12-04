@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="/qestionnaire/questionnaire.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/d510096626.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!--Questionaire-->
+    <div class="questionnaire">
+        <h2>Tell Us About Yourself</h2>
+        <form id="questionnaireForm">
+         
+          <label for="age-group" class="age-group">Age Group:</label>
+          <select id="age-group" name="age-group" required>
+              <option value="" disabled selected>SELECT AGE GROUP</option>
+              <option value="18-25">18-25</option>
+              <option value="26-50">26-50</option>
+              <option value="51-65">51-65</option>
+              <option value="66 and Above">66 and Above</option>
+            </select>
+
+            <label for="occupation" class="occupation">Occupation</label>
+            <select id="occupation" required >
+              <option value="" disabled selected>Employment</option>
+              <option value="Employed">Employed</option>
+              <option value="Unemployed">Unemployed</option>
+            </select>
+
+            <label for="education" class="education">Education Level</label>
+<select id="education" required>
+<option value="" disabled selected>Education</option>
+<option value="unknown">Unknown</option>
+<option value="Primary">Primary</option>
+<option value="Secondary">Secondary</option>
+<option value="Tertiary">Tertiary</option>
+</select>
+
+<label for="treatmentGoals" class="treatmentGoals">Treatment Goals</label>
+<select id="treatmentGoals" required>
+<option value="" disabled selected>Treatment Goals</option>
+<option value="Short-term">Short-term</option>
+<option value="Long-term">Long-term</option>
+</select>
+
+<label for="therapyModality" class="therapyModality">Therapy Modality</label>
+<select id="therapyModality" required>
+<option value="" disabled selected>Treapy Modality</option>
+<option value="individual">Individual</option>
+<option value="group">Group</option>
+<option value="family">Family</option>
+</select>
+
+<h3>Prefered Therapist Gender</h3>
+<label for="option1" class="option1">Male</label>
+<input  id="option1" type="radio" name="TherapistGender" value="male" required>
+
+<label for="option2" class="option2">Female</label>
+<input id="option2" type="radio" name="TherapistGender" value="female" required>
+
+<label for="consent" class="consent">Consent:</label>
+    <input type="checkbox" id="consent" name="consent" required>
+    <label for="consent" class="consent2">I consent to the terms and conditions.</label>
+
+    <button type="submit" id="subButton">Submit</button>
+        </form>
+      </div>
+      <script>
+        document.getElementById('subButton').onclick = function() {
+          this.style.display = 'none';
+          this.syle.zIndex = 0;
+        };
+      </script>
+</body>
+</html>
